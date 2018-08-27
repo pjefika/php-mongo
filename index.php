@@ -42,15 +42,14 @@ $app->get('/mongo/teste', function (){
     try{
         //$m = new MongoDB\Client("mongodb://127.0.0.1:27017");
         $m = new \MongoDB\Client("mongodb://localhost:27017/efika");
-
-        var_dump($m);
+        //$m = new Mongo("mongodb://localhost:27017/efika");
+        $m->connect();
+        print_r($m->listDatabases());
+        return '';
     }catch (Exception $e){
         print_r($e->getMessage());
         return '';
     }
-
-
-    return '';
 });
 
 $app->get('/', function (){
