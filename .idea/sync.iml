@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" packagePrefix="App\iboltpag\" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/eduardokum/laravel-boleto" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/container" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/events" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/support" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/view" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mongodb/mongodb" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/neitanod/forceutf8" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pimple/pimple" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/setasign/fpdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/silex/silex" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twig/extensions" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

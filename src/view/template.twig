@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <title>iBoltpag</title>
+    <link rel="stylesheet" href="/ibolt-pag/resources/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/ibolt-pag/resources/css/ibolt.css" />
+    <link rel="stylesheet" href="/ibolt-pag/resources/css/datepicker.min.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>iBoltpag</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="/ibolt-pag/dashboard">Pagina inicial</a>
+            </li>
+            <li>
+                <a href="/ibolt-pag/transacoes">Lista</a>
+            </li>
+            <li>
+                <a href="/ibolt-pag/boleto/novo">Gerar boleto</a>
+            </li>
+            <li>
+                <a href="/ibolt-pag/transacao/remessa">Remessa</a>
+            </li>
+            <li>
+                <a href="/ibolt-pag/transacao/retorno">Retorno</a>
+            </li>
+            <li>
+                <a href="#">Configurações</a>
+            </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+            <li>
+                <a href="#" class="download">Sair</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content Holder -->
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+<script src="/ibolt-pag/resources/js/jquery-3.3.1.min.js"></script>
+<script src="/ibolt-pag/resources/js/popper.min.js"></script>
+<script src="/ibolt-pag/resources/js/bootstrap.min.js"></script>
+<script src="/ibolt-pag/resources/js/datepicker.min.js"></script>
+<script src="/ibolt-pag/resources/js/jquery.mask.min.js"></script>
+<script src="/ibolt-pag/resources/js/vue.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+            $(this).toggleClass('active');
+        });
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-center",
+            "preventDuplicates": true,
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    });
+</script>
+{% block extra %}
+{% endblock %}
+</body>
+</html>

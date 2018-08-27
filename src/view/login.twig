@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <title>iBoltpag</title>
+    <link rel="stylesheet" href="/ibolt-pag/resources/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/ibolt-pag/resources/css/ibolt.css" />
+    <link rel="stylesheet" href="/ibolt-pag/resources/css/datepicker.min.css" />
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+<body>
+<!-- Image and text -->
+<nav class="navbar navbar-light bg-primary">
+    <a class="navbar-brand text-white" href="#">
+        <img src="/ibolt-pag/resources/images/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        iBoltpag
+    </a>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 text-center">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Digite seus dados de acesso</h5>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        <input id="username" type="text" class="form-control" placeholder="Usuário" />
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        </div>
+                        <input id="password" type="password" class="form-control" placeholder="Senha" />
+                    </div>
+                    <div class="text-right">
+                        <a href="#" class="btn btn-primary" id="login">Acessar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+
+</div>
+
+<script src="/ibolt-pag/resources/js/jquery-3.3.1.min.js"></script>
+<script src="/ibolt-pag/resources/js/popper.min.js"></script>
+<script src="/ibolt-pag/resources/js/bootstrap.min.js"></script>
+<script src="/ibolt-pag/resources/js/datepicker.min.js"></script>
+<script src="/ibolt-pag/resources/js/jquery.mask.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": true,
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+
+        $('#login').click(function () {
+            var username = $('#username').val();
+            var password = $('#password').val();
+            var token = 'XXXXXZZZZZ';
+
+            $.post(
+                "/ibolt-pag/login",
+                {
+                    username: username,
+                    password: password,
+                    token: token
+                },
+                function (data) {
+                    var res = JSON.parse(data);
+                    if(res.code == 200){
+                        window.location.replace("/ibolt-pag/dashboard");
+                    }else{
+                        toastr.error(res.msg)
+                    }
+                }
+            )
+
+        });
+
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+            $(this).toggleClass('active');
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    });
+</script>
+{% block extra %}
+{% endblock %}
+</body>
+</html>
