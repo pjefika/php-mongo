@@ -22,7 +22,7 @@ require_once __DIR__ . '/servicos.php';
 Rotas
 posso chamar paginas, controllers
 */
-ini_set('display_errors', false);
+ini_set('display_errors', true);
 
 
 $app->post('/mongo', function (){
@@ -41,16 +41,16 @@ $app->get('/mongo/teste', function (){
 
     try{
         //$mongo = new MongoDB\Client("mongodb://127.0.0.1:27017");
-        $mongo = new \MongoDB\Client("mongodb://localhost:27017/efika");
+        //$mongo = new \MongoDB\Client("mongodb://localhost:27017/efika");
         //$mongo = new Mongo("mongodb://localhost:27017/efika");
-        //$mongo = new Mongo('mongodb://localhost:27017/efika');
+        $mongo = new Mongo('mongodb://localhost:27017/efika');
         $db = $mongo->efika;
         $col = $db->users;
         $total = $col->count(true);
         echo ($total) ." registros encontrados.<p>";
         $mongo->close();
         return '';
-    }catch (Exception $e){
+    }catch (\Exception $e){
         print_r($e->getMessage());
         return '';
     }
