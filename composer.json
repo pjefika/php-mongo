@@ -9,6 +9,6 @@
         "silex/silex": "^2.3",
         "twig/twig": "^2.5",
         "twig/extensions": "^1.5",
-        "mongodb/mongodb": "^1.4"
+        "mongodb/mongodb": "^1.0.0.0"
     }
 }

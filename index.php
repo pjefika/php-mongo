@@ -40,7 +40,8 @@ $app->post('/mongo', function (){
 $app->get('/mongo/teste', function (){
 
     try{
-        $m = new MongoDB\Client("mongodb://127.0.0.1:27017");
+        //$m = new MongoDB\Client("mongodb://127.0.0.1:27017");
+        $m = new \MongoDB\Client("mongodb://localhost:27017/efika");
 
         var_dump($m);
     }catch (Exception $e){
